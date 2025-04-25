@@ -1,0 +1,58 @@
+[env]
+CARGO_MAKE_EXTEND_WORKSPACE_MAKEFILE = true
+
+
+[tasks.build-windows-debug-msvc]
+script = [
+    '''
+    cargo build --target x86_64-pc-windows-msvc
+    python install.py x86_64-pc-windows-msvc False
+    '''
+]
+
+[tasks.build-windows-release-msvc]
+script = [
+    '''
+    cargo build --release --target x86_64-pc-windows-msvc
+    python install.py x86_64-pc-windows-msvc True
+    '''
+]
+
+[tasks.build-linux-debug]
+script = [
+    '''
+    cargo build --target x86_64-unknown-linux-gnu
+    python install.py x86_64-unknown-linux-gnu False
+    '''
+]
+
+[tasks.build-linux-release]
+script = [
+    '''
+    cargo build --release --target x86_64-unknown-linux-gnu
+    python install.py x86_64-unknown-linux-gnu True
+    '''
+]
+
+[tasks.build-macos-arm-debug]
+script = [
+    '''
+    cargo build --target aarch64-apple-darwin
+    python install.py aarch64-apple-darwin False
+    '''
+]
+
+[tasks.build-macos-arm-release]
+script = [
+    '''
+    cargo build --release --target aarch64-apple-darwin
+    python install.py aarch64-apple-darwin True
+    '''
+]
+
+[tasks.build-all-debug]
+dependencies = ["build-windows-debug-msvc", "build-linux-debug", "build-macos-arm-debug"]
+
+[tasks.build-all-release]
+dependencies = ["build-windows-release-msvc", "build-linux-release", "build-macos-arm-release"]
+
