@@ -1,6 +1,9 @@
 use godot::prelude::*;
 use godot::classes::Node;
 
+mod window;
+
+
 #[derive(GodotClass)]
 #[class(base=Node, init)]
 struct Player {
