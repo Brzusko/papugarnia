@@ -1,1 +1,1 @@
-mod window_setup;
+mod game_setup;
