@@ -1,10 +1,12 @@
 use godot::prelude::*;
-use godot::classes::{Object, DisplayServer};
+use godot::classes::Object;
 
+
+pub(crate) static WINDOW_INTERFACE_NAME: &str = "WindowInterface";
 
 #[derive(GodotClass)]
 #[class(base = Object, init)]
-struct WindowInterface
+pub(crate) struct WindowInterface
 {
     base: Base<Object>
 }
