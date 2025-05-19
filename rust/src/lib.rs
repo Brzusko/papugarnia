@@ -13,10 +13,10 @@ fn initialize_scene_singletons()
     engine.register_singleton(WINDOW_INTERFACE_NAME, &WindowInterface::new_alloc());
 }
 
-fn deinitialize_scenee_singletons()
+fn deinitialize_scene_singletons()
 {
     let mut engine: Gd<Engine> = Engine::singleton();
-    
+
     engine.get_singleton(WINDOW_INTERFACE_NAME).map(|singleton: Gd<Object>| {
         engine.unregister_singleton(WINDOW_INTERFACE_NAME);
         singleton.free();
@@ -41,7 +41,7 @@ unsafe impl ExtensionLibrary for GameLibrary
     {
        match level 
         {
-            InitLevel::Scene => deinitialize_scenee_singletons(),
+            InitLevel::Scene => deinitialize_scene_singletons(),
             _ => {}
         }
     }
