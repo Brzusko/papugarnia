@@ -20,7 +20,12 @@ config/icon="res://icon.svg"
 
 GlobalGameSetup="*res://autoloads/game_setup/GameSetup.tscn"
 
+[display]
+
+window/per_pixel_transparency/allowed=true
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+viewport/transparent_background=true
