@@ -15,3 +15,7 @@ config/tags=PackedStringArray("papugarnia")
 run/main_scene="uid://baqu5tkbjvcgm"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+GlobalGameSetup="*res://autoloads/game_setup/GameSetup.tscn"
