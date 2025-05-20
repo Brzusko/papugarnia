@@ -1,9 +1,12 @@
 mod singletons;
+mod autoloads;
 
 use godot::prelude::*;
 use godot::classes::{Engine};
 use godot::classes::class_macros::sys::InitLevel;
+
 use singletons::window_interface::{WindowInterface, WINDOW_INTERFACE_NAME};
+
 
 struct GameLibrary;
 
